@@ -1,0 +1,182 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    
+<!-- ========== Start navbar Section ========== -->
+
+   <nav id="navbar" class="flex s-around bg-color">
+        <div class="left-nav">
+            <h2 class="t-white">Portfolio</h2>
+        </div>
+        <div class="right-nav">
+            <ul class="flex">
+                <li><a href="#home" class="t-white roboto">Home</a></li>
+                <li><a href="#about" class="t-white roboto">About</a></li>
+                <li><a href="#skills" class="t-white roboto">Skills</a></li>
+                <li><a href="#Projects" class="t-white roboto">Project</a></li>
+                <li><a href="#Contact" class="t-white roboto">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- ========== End navbar Section ========== -->
+
+
+<!-- ========== Start Home Section ========== -->
+
+    <section id="home" class="flex s-around sw-80 m-auto">
+        <div class="home-left flex items-center">
+            <div class="home-content">
+                <h6>
+                   Hello, I am 
+                </h6>
+                <h1>Nayan Kanzariya</h1>
+                <h4>Software Engineer</h4>
+                <a href="{% static 'pdf/cv.pdf' %}"  target="_blank">
+                    <button class="btn poppins">Resume</button></a>
+            </div>
+        </div>
+        <div class="home-right flex s-center items-center">
+            <div class="circle flex s-center items-center" id="mainImage">
+               
+                <img src="{% static 'image/mypic.png'%}" alt="">
+            </div>
+        </div>
+    </section>
+
+<!-- ========== End Home Section ========== -->
+
+<!-- ========== Start about section ========== -->
+
+    <section id="about">
+        <h1 class="t-center my-2 t-white f-2">About Me</h1>
+        <div class="about-container flex s-around ">
+            <div class=" about-left flex s-center items-center">
+                <img src="{%static 'image/dog.png'%}" alt="" style="width: 60%;">
+            </div>
+
+            <div class="about-right flex">
+                <div class="about-content">
+                    <h1 class="t-white m-b-1 poppins">Nayan Kanzariya</h1>
+                    <p class="t-white poppins">
+                        My name is Nayan Kanzariya. I am BCA graduate student from Shree Chimanbhai patel institute of management in 2023. I am fresher, I’m passionate about learning new techniques and technologies that allow me to grow my skills along with career.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ========== End about section ========== -->
+
+
+<!-- ========== Start skill Section ========== -->
+
+    <section id="skills">
+        <h1 class="t-center my-2 t-white f-2">Skills</h1>
+        <div class="services-container flex s-around h-50">
+
+        <div class="skills-right flex items-center">
+            <div class="skillss-container">
+                <div class="html bar p-relative"><span class="bar-content left t-white">HTML</span><span
+                        class="bar-content right-skills t-white">90%</span></div>
+                <div class="css bar p-relative"><span class="bar-content left t-white">CSS</span><span
+                        class="bar-content right-skills t-white">80%</span></div>
+                <div class="js bar p-relative"><span class="bar-content left t-white">JavaScript</span><span
+                        class="bar-content right-skills t-white">75%</span></div>
+                <div class="python bar p-relative"><span class="bar-content left t-white">Python</span><span
+                        class="bar-content right-skills t-white">70%</span></div>
+                <div class="mysql bar p-relative"><span class="bar-content left t-white">MySQL</span><span
+                        class="bar-content right-skills t-white">70%</span></div>        
+            </div>
+        </div>
+        </div>
+    </section>
+
+<!-- ========== End skill Section ========== -->
+
+
+<!-- ========== Start project Section ========== -->
+
+    <section id="Projects">
+        <h1 class=" t-center my-2 t-white f-2">Project</h1>
+        <div class="projects-container flex s-center">
+            <div class="projects-item flex f-col s-center items-center">
+               
+                <h1 class="t-white poppins">My Portfolio</h1>
+                <p class="t-white poppins">This is My portfolio website which is created with HTML,CSS and python along with Django which describe my skill and knowledge. My portfolio website showcases my work in a sleek and minimalist design, allowing the focus to be on the content itself. The layout is uncluttered, making it easy for visitors to navigate and explore my projects.</p>
+
+                <div class="buttons flex s-around">
+                    <a href="" target="_blanks"
+                        class="btn mx-1 m-top">GitHub</a>
+                    <a href="#" target="_blanks" class="btn m-top live">Live Link</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ========== End project Section ========== -->
+
+
+<!-- ========== Start contact Section ========== -->
+
+    <section id="Contact" class="m-b-1">
+        <h1 class=" t-center my-2 t-white f-2">Contact Me</h1>
+        <div class="contact-container flex s-around items-centers">
+            <div class="form" id="contactForm">
+                <form method="post" > 
+                    {% csrf_token %}
+                    <div class="name form-div">
+                        <input type="text" name="name" id="name" class="poppins" placeholder="Enter Your Name">
+                    </div>
+
+                    <div class="email form-div">
+                        <input type="email" name="email" id="" class="poppins" placeholder="Enter Your Email"
+                            required>
+                    </div>
+
+                    <div class="phone form-div">
+                        <input type="phone" name="number" id="" class="poppins" placeholder="Enter Your Phone"
+                            required>
+                    </div>
+                    
+                    <div class="textarea form-div">
+                        <textarea name="content" id="textarea" cols="30" rows="10" class="poppins"
+                            placeholder="Enter Messages"></textarea>
+                    </div>
+                    <button type="submit" class="btn poppins" id="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<!-- ========== End contact Section ========== -->
+
+<!-- ========== Start footer Section ========== -->
+
+    <footer id="footer">
+        <ul class="flex s-center w-80 m-auto my-2 res">
+            <li><a href="#home" class="poppinss">Home</a></li>
+            <li><a href="#about" class="poppinss">About</a></li>
+            <li><a href="#skills" class="poppinss">Skills</a></li>
+            <li><a href="#projects" class="poppinss">Projects</a></li>
+            <li><a href="#portfolio" class="poppinss">Portfolio</a></li>
+        </ul>
+        
+        <p class="t-center my-2 poppins">&copy; All Rights Reserved - <span class="cpy-white poppins">Error By Night 
+                </span></p>
+
+    </footer>
+
+<!-- ========== End footer Section ========== -->
+
+
+</body>
+</html>
